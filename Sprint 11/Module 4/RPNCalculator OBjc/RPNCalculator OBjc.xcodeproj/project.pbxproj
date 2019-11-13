@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		A36BC185237C67BA00ACB436 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC184237C67BA00ACB436 /* AppDelegate.m */; };
 		A36BC188237C67BA00ACB436 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC187237C67BA00ACB436 /* SceneDelegate.m */; };
-		A36BC18B237C67BA00ACB436 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC18A237C67BA00ACB436 /* ViewController.m */; };
 		A36BC18E237C67BA00ACB436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36BC18C237C67BA00ACB436 /* Main.storyboard */; };
 		A36BC190237C67BB00ACB436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36BC18F237C67BB00ACB436 /* Assets.xcassets */; };
 		A36BC193237C67BB00ACB436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36BC191237C67BB00ACB436 /* LaunchScreen.storyboard */; };
 		A36BC196237C67BC00ACB436 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC195237C67BC00ACB436 /* main.m */; };
+		A36BC1A0237C68AA00ACB436 /* LSICalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC19F237C68AA00ACB436 /* LSICalculatorViewController.m */; };
+		A36BC1A4237C68D300ACB436 /* LSICalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC1A3237C68D300ACB436 /* LSICalculator.m */; };
+		A36BC1A7237C68E100ACB436 /* LSIDigitAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC1A6237C68E100ACB436 /* LSIDigitAccumulator.m */; };
+		A36BC1AA237C68EC00ACB436 /* LSIStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A36BC1A9237C68EC00ACB436 /* LSIStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +25,19 @@
 		A36BC184237C67BA00ACB436 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A36BC186237C67BA00ACB436 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A36BC187237C67BA00ACB436 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A36BC189237C67BA00ACB436 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A36BC18A237C67BA00ACB436 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A36BC18D237C67BA00ACB436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A36BC18F237C67BB00ACB436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A36BC192237C67BB00ACB436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A36BC194237C67BC00ACB436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36BC195237C67BC00ACB436 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A36BC19E237C68AA00ACB436 /* LSICalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSICalculatorViewController.h; sourceTree = "<group>"; };
+		A36BC19F237C68AA00ACB436 /* LSICalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSICalculatorViewController.m; sourceTree = "<group>"; };
+		A36BC1A2237C68D300ACB436 /* LSICalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSICalculator.h; sourceTree = "<group>"; };
+		A36BC1A3237C68D300ACB436 /* LSICalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSICalculator.m; sourceTree = "<group>"; };
+		A36BC1A5237C68E100ACB436 /* LSIDigitAccumulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIDigitAccumulator.h; sourceTree = "<group>"; };
+		A36BC1A6237C68E100ACB436 /* LSIDigitAccumulator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIDigitAccumulator.m; sourceTree = "<group>"; };
+		A36BC1A8237C68EC00ACB436 /* LSIStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIStack.h; sourceTree = "<group>"; };
+		A36BC1A9237C68EC00ACB436 /* LSIStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +70,49 @@
 		A36BC182237C67BA00ACB436 /* RPNCalculator OBjc */ = {
 			isa = PBXGroup;
 			children = (
+				A36BC1A1237C68B100ACB436 /* Calculator */,
+				A36BC19D237C686500ACB436 /* Resources */,
+				A36BC19C237C685400ACB436 /* View Controllers */,
+				A36BC18C237C67BA00ACB436 /* Main.storyboard */,
+				A36BC18F237C67BB00ACB436 /* Assets.xcassets */,
+				A36BC194237C67BC00ACB436 /* Info.plist */,
+			);
+			path = "RPNCalculator OBjc";
+			sourceTree = "<group>";
+		};
+		A36BC19C237C685400ACB436 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A36BC19E237C68AA00ACB436 /* LSICalculatorViewController.h */,
+				A36BC19F237C68AA00ACB436 /* LSICalculatorViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A36BC19D237C686500ACB436 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A36BC183237C67BA00ACB436 /* AppDelegate.h */,
 				A36BC184237C67BA00ACB436 /* AppDelegate.m */,
 				A36BC186237C67BA00ACB436 /* SceneDelegate.h */,
 				A36BC187237C67BA00ACB436 /* SceneDelegate.m */,
-				A36BC189237C67BA00ACB436 /* ViewController.h */,
-				A36BC18A237C67BA00ACB436 /* ViewController.m */,
-				A36BC18C237C67BA00ACB436 /* Main.storyboard */,
-				A36BC18F237C67BB00ACB436 /* Assets.xcassets */,
 				A36BC191237C67BB00ACB436 /* LaunchScreen.storyboard */,
-				A36BC194237C67BC00ACB436 /* Info.plist */,
 				A36BC195237C67BC00ACB436 /* main.m */,
 			);
-			path = "RPNCalculator OBjc";
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A36BC1A1237C68B100ACB436 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				A36BC1A2237C68D300ACB436 /* LSICalculator.h */,
+				A36BC1A3237C68D300ACB436 /* LSICalculator.m */,
+				A36BC1A5237C68E100ACB436 /* LSIDigitAccumulator.h */,
+				A36BC1A6237C68E100ACB436 /* LSIDigitAccumulator.m */,
+				A36BC1A8237C68EC00ACB436 /* LSIStack.h */,
+				A36BC1A9237C68EC00ACB436 /* LSIStack.m */,
+			);
+			name = Calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +185,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A36BC18B237C67BA00ACB436 /* ViewController.m in Sources */,
 				A36BC185237C67BA00ACB436 /* AppDelegate.m in Sources */,
+				A36BC1A4237C68D300ACB436 /* LSICalculator.m in Sources */,
+				A36BC1A0237C68AA00ACB436 /* LSICalculatorViewController.m in Sources */,
+				A36BC1AA237C68EC00ACB436 /* LSIStack.m in Sources */,
+				A36BC1A7237C68E100ACB436 /* LSIDigitAccumulator.m in Sources */,
 				A36BC196237C67BC00ACB436 /* main.m in Sources */,
 				A36BC188237C67BA00ACB436 /* SceneDelegate.m in Sources */,
 			);
