@@ -7,40 +7,96 @@
 //
 
 #import "LSICalculatorViewController.h"
-
+#import "LSICalculator.h"
+#import "LSIDigitAccumulator.h"
 @interface LSICalculatorViewController ()
 
+@property (nonatomic, strong) LSICalculator *calculator;
+
+@property (nonatomic, strong) LSIDigitAccumulator *digitAccumulator;
+
+@property (nonatomic, readonly) NSNumberFormatter *numberFormatter;
 @end
 
 @implementation LSICalculatorViewController
 
+- (void)commonInit
+{
+    _calculator = [[LSICalculator alloc] init];
+    _digitAccumulator = [[LSIDigitAccumulator alloc] init];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-- (IBAction)numberButtonTapped:(id)sender {
+- (IBAction)numberButtonTapped:(UIButton *)sender
+{
+    [self.digitAccumulator addDigitWithNumericValue:sender.tag];
+    [self updateTextFieldWithValue:self.digitAccumulator.value];
 }
-- (IBAction)decimalButtonTapped:(id)sender {
+- (IBAction)decimalButtonTapped:(UIButton *)sender
+{
+    [self.digitAccumulator addDecimalPoint];
+    [self updateTextFieldWithValue:self.digitAccumulator.value];
 }
-- (IBAction)returnButtonTapped:(id)sender {
+- (IBAction)returnButtonTapped:(UIButton *)sender {
+    double value = self.digitAccumulator.value;
+    [self.calculator pushNumber:value];
+    [self.digitAccumulator clear];
+    [self updateTextFieldWithValue:self.digitAccumulator.value];
 }
-- (IBAction)plusButtonTapped:(id)sender {
+- (IBAction)plusButtonTapped:(UIButton *)sender {
+    [self.calculator applyOperator:LSICalculatorOperatorAdd];
+    [self updateTextFieldWithValue:self.calculator.topValue];
 }
-- (IBAction)minusButtonTapped:(id)sender {
+- (IBAction)minusButtonTapped:(UIButton *)sender {
+    [self.calculator applyOperator:LSICalculatorOperatorSubtract];
+    [self updateTextFieldWithValue:self.calculator.topValue];
 }
-- (IBAction)multiplyButtonTapped:(id)sender {
+- (IBAction)multiplyButtonTapped:(UIButton *)sender {
+    [self.calculator applyOperator:LSICalculatorOperatorMultiply];
+        [self updateTextFieldWithValue:self.calculator.topValue];
+ 
 }
-- (IBAction)divideButtonTapped:(id)sender {
+- (IBAction)divideButtonTapped:(UIButton *)sender {
+    [self.calculator applyOperator:LSICalculatorOperatorDivide];
+    [self updateTextFieldWithValue:self.calculator.topValue];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)updateTextFieldWithValue: (double)value
+{
+    self.textField.text = [self.numberFormatter stringFromNumber:@(value)];
 }
-*/
+
+@synthesize numberFormatter = _numberFormatter;
+- (NSNumberFormatter *)numberFormatter
+{
+    if (!_numberFormatter) {
+        _numberFormatter = [[NSNumberFormatter alloc] init];
+        _numberFormatter.allowsFloats = YES;
+        _numberFormatter.maximumIntegerDigits = 20;
+        _numberFormatter.minimumFractionDigits = 0;
+        _numberFormatter.maximumFractionDigits = 20;
+    }
+    return _numberFormatter;
+}
 
 @end
