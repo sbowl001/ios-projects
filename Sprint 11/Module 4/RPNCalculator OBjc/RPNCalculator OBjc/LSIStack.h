@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIStack : NSObject
 
+-(instancetype)initWithArray:(NSArray *)array;
+
+-(void)pushValue:(double)value;
+-(double)popLastValue;
+-(double)peekLastValue;
 @end
 
+//.h file: - Declare the methods to push, pop and peek the stack. - Declare an initWith initalizer that takes an NSArray.
 NS_ASSUME_NONNULL_END
